@@ -1,0 +1,9 @@
+{
+  "name": "postcss-exports",
+  "description": "",
+  "version": "0.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "postcss": "^5.2.15"
+  }
+}
