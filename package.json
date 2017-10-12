@@ -1,9 +1,20 @@
 {
-  "name": "postcss-exports",
-  "description": "",
-  "version": "0.0.0",
-  "main": "index.js",
-  "dependencies": {
-    "postcss": "^5.2.15"
-  }
+	"name": "postcss-exports",
+	"description": "",
+	"version": "0.0.0",
+	"main": "index.js",
+	"scripts": {
+		"postversion": "git push --tags origin HEAD",
+		"prepare": "npm run lint && npm run build",
+		"lint": "tslint -e \"*.d.ts\" \"*.ts\"",
+		"build": "tsc"
+	},
+	"devDependencies": {
+		"@types/node": "^8.0.34",
+		"tslint": "^5.7.0",
+		"typescript": "^2.5.3"
+	},
+	"dependencies": {
+		"postcss": "^6.0.13"
+	}
 }
