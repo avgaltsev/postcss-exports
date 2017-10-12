@@ -1,7 +1,7 @@
 {
 	"name": "postcss-exports",
 	"description": "",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"main": "index.js",
 	"scripts": {
 		"postversion": "git push --tags origin HEAD",
