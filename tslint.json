@@ -2,19 +2,19 @@
 	"extends": "tslint:recommended",
 
 	"rules": {
+		"callable-types": false,
 		"indent": [true, "tabs"],
-		"quotemark": [true, "double"],
-		"ordered-imports": [true, {"import-sources-order": "any", "named-imports-order": "any"}],
-		"only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],
-		"max-line-length": false,
-		"object-literal-sort-keys": false,
 		"interface-name": [true, "never-prefix"],
-		"prefer-const": true,
-		"no-shadowed-variable": false,
+		"max-line-length": false,
 		"no-empty-interface": false,
+		"no-empty": false,
+		"no-shadowed-variable": false,
 		"no-string-literal": false,
 		"object-literal-key-quotes": [true, "consistent"],
-		"callable-types": false,
-		"no-empty": false
+		"object-literal-sort-keys": false,
+		"only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],
+		"ordered-imports": [true, {"import-sources-order": "any", "named-imports-order": "any"}],
+		"prefer-const": true,
+		"quotemark": [true, "double"]
 	}
 }
