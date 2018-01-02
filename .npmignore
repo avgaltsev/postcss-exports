@@ -1,4 +1,7 @@
 node_modules
 package-lock.json
+
 *.ts
 !*.d.ts
+
+package.json.d.ts

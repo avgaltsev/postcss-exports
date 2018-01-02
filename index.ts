@@ -2,8 +2,10 @@ import * as path from "path";
 
 import * as postcss from "postcss";
 
-const POSTCSS_PLUGIN = "postcss-exports";
-const POSTCSS_VERSION = "0.0.0";
+import {name, version} from "./package.json";
+
+const POSTCSS_PLUGIN = name;
+const POSTCSS_VERSION = version;
 
 const SCOPE_PATTERN = /^(?:[a-zA-Z_][a-zA-Z0-9_-]*)?$/;
 
