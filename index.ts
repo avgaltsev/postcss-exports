@@ -118,7 +118,7 @@ export default postcss.plugin<PluginOptions>(POSTCSS_PLUGIN, (pluginOptions = {}
 	const generateName = (typeof pluginOptions.generateName === "function") ? pluginOptions.generateName : generateDefaultName;
 	const takeExports = (typeof pluginOptions.takeExports === "function") ? pluginOptions.takeExports : dontTakeExports;
 
-	const transformer: postcss.Transformer = (root, result) => {
+	const transformer: postcss.Transformer = (root) => {
 		const context: Context = {
 			exports: {
 				scopes: {},
