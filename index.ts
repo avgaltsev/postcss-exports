@@ -1,6 +1,7 @@
 import * as path from "path";
 
 import * as postcss from "postcss";
+import {Transformer, plugin} from "postcss";
 
 import {name, version} from "./package.json";
 
@@ -114,11 +115,11 @@ const generateDefaultName: NameGenerator = (filePath, scopeName, className, modN
 
 const dontTakeExports: ExportsTaker = (exports) => {};
 
-export default postcss.plugin<PluginOptions>(POSTCSS_PLUGIN, (pluginOptions = {}) => {
-	const generateName = (typeof pluginOptions.generateName === "function") ? pluginOptions.generateName : generateDefaultName;
-	const takeExports = (typeof pluginOptions.takeExports === "function") ? pluginOptions.takeExports : dontTakeExports;
+export default plugin<PluginOptions>(POSTCSS_PLUGIN, (pluginOptions = {}) => {
+	const generateName: NameGenerator = (typeof pluginOptions.generateName === "function") ? pluginOptions.generateName : generateDefaultName;
+	const takeExports: ExportsTaker = (typeof pluginOptions.takeExports === "function") ? pluginOptions.takeExports : dontTakeExports;
 
-	const transformer: postcss.Transformer = (root) => {
+	const transformer: Transformer = (root) => {
 		const context: Context = {
 			exports: {
 				scopes: {},
@@ -135,6 +136,8 @@ export default postcss.plugin<PluginOptions>(POSTCSS_PLUGIN, (pluginOptions = {}
 				}));
 			}
 		});
+
+		takeExports(context.exports);
 	};
 
 	transformer.postcssPlugin = POSTCSS_PLUGIN;
