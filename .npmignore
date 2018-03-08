@@ -4,4 +4,4 @@ package-lock.json
 *.ts
 !*.d.ts
 
-/package.json.d.ts
+/types/*.d.ts

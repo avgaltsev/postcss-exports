@@ -3,10 +3,10 @@ import * as path from "path";
 import * as postcss from "postcss";
 import {Transformer, plugin} from "postcss";
 
-import {name, version} from "./package.json";
+import * as packageJson from "./package.json";
 
-const POSTCSS_PLUGIN = name;
-const POSTCSS_VERSION = version;
+const POSTCSS_PLUGIN: string = packageJson.name;
+const POSTCSS_VERSION: string = packageJson.version;
 
 const SCOPE_PATTERN = /^(?:[a-zA-Z_][a-zA-Z0-9_-]*)?$/;
 
