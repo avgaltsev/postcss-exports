@@ -10,11 +10,11 @@
 		"build": "tsc"
 	},
 	"devDependencies": {
-		"@types/node": "^9.4.6",
-		"tslint": "^5.9.1",
-		"typescript": "^2.7.2"
+		"@types/node": "^10.5.2",
+		"tslint": "^5.11.0",
+		"typescript": "^2.9.2"
 	},
 	"dependencies": {
-		"postcss": "^6.0.19"
+		"postcss": "^7.0.1"
 	}
 }
