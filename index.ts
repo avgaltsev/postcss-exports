@@ -17,6 +17,15 @@ const GLOBAL_CLASS_PATTERN = /\.([a-zA-Z_][a-zA-Z0-9_-]*):global\b/g;
 const ANIMATION_DECLARATION_NAME_PATTERN = /^(?:-[a-z]-)?(?:animation|animation-name)$/;
 const ANIMATION_DECLARATION_TOKEN_PATTERN = /(?:^|\s)(?:[+-]?\d+(?:s|ms)?|linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier\([^)]+\)|step-start|step-end|steps\([^)]+\)|frames\([^)]+\)|infinite|normal|reverse|alternate|alternate-reverse|none|forwards|backwards|both|running|paused)(?=$|\s)/g;
 
+export interface Scope {
+	[name: string]: {
+		base: string;
+		mods?: {
+			[name: string]: string;
+		};
+	};
+}
+
 export interface NameGenerator {
 	(filePath: string, name: string, modName: string): string;
 }
@@ -28,15 +37,6 @@ export interface ScopeTaker {
 export interface PluginOptions {
 	generateName?: NameGenerator;
 	takeScope?: ScopeTaker;
-}
-
-export interface Scope {
-	[name: string]: {
-		base: string;
-		mods?: {
-			[name: string]: string;
-		};
-	};
 }
 
 const generateDefaultName: NameGenerator = (filePath, name, modName?) => {
